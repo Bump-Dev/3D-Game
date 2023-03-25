@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 8.0
 const JUMP_VELOCITY = 8.0
 
@@ -11,15 +10,18 @@ var mouse_sensitivity := 0.005
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 
-func _ready() -> void:
+func _ready():
+	if !is_multiplayer_authority(): return
+	camera.current = true
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func _enter_tree():
+	set_multiplayer_authority(str(name).to_int())
+
 func _unhandled_input(event):
-	if event.is_action_pressed("toggle_fullscreen"):
-		if !DisplayServer.window_get_mode():
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		else:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	if !is_multiplayer_authority(): return
+	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
@@ -31,6 +33,8 @@ func _unhandled_input(event):
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _physics_process(delta):
+	if !is_multiplayer_authority(): return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
