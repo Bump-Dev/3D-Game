@@ -25,7 +25,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg", "res://addons/yamms/plugin.cfg")
+enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg", "res://addons/dynamic_day_night_cycles/plugin.cfg")
 
 [input]
 
