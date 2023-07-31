@@ -29,7 +29,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg", "res://addons/dynamic_day_night_cycles/plugin.cfg")
+enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg")
 
 [input]
 
@@ -58,6 +58,26 @@ left={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
 ]
 }
+pickup={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(126, 25),"global_position":Vector2(815, 363),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+]
+}
+rotate={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(74, 0),"global_position":Vector2(763, 338),"factor":1.0,"button_index":2,"pressed":true,"double_click":true,"script":null)
+]
+}
+throw={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":4,"position":Vector2(204, 15),"global_position":Vector2(893, 353),"factor":1.0,"button_index":3,"pressed":true,"double_click":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
+]
+}
 
 [input_devices]
 
@@ -70,3 +90,7 @@ pointing/size/viewport_width=1152
 [physics]
 
 3d/default_gravity=19.6
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

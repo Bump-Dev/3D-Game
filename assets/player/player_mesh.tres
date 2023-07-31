@@ -1,0 +1,10 @@
+[gd_resource type="CapsuleMesh" load_steps=2 format=3 uid="uid://bf1kaqkk86tsf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njphv"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0.627451, 0.00392157, 1)
+roughness = 0.0
+
+[resource]
+material = SubResource("StandardMaterial3D_njphv")

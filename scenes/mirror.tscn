@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf0obj2td8paw"]
+
+[ext_resource type="Script" path="res://scripts/mirror.gd" id="1_0pgyt"]
+
+[sub_resource type="QuadMesh" id="1"]
+size = Vector2(4, 5)
+
+[node name="Mirror" type="MeshInstance3D"]
+layers = 524288
+mesh = SubResource("1")
+script = ExtResource("1_0pgyt")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1, 0, 0, -0.032873)
+mesh = SubResource("1")
+
+[node name="Viewport" type="SubViewport" parent="."]
+
+[node name="PlaneTransform" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
